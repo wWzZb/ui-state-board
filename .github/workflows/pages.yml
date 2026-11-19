@@ -1,0 +1,62 @@
+name: Deploy Yingshi demo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/pages.yml
+      - examples/yingshi/**
+      - skills/ui-state-board/assets/canvas/**
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Assemble the static demo
+        run: |
+          template=skills/ui-state-board/assets/canvas
+          example=examples/yingshi
+          mkdir -p _site/board
+          cp "$template/index.html" "$template/canvas.css" "$template/canvas.js" _site/board/
+          cp "$example/board.json" _site/board/
+          cp "$example/studio.html" _site/
+          cp -R "$example/app" _site/
+          cat > _site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="zh-CN">
+          <meta charset="utf-8">
+          <meta http-equiv="refresh" content="0; url=board/">
+          <title>映室 · UI 状态画布</title>
+          <a href="board/">打开映室画布</a>
+          </html>
+          HTML
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
