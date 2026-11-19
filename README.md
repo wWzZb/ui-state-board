@@ -7,10 +7,16 @@
 
 ## 安装
 
-在终端全局安装到 Codex：
+在项目目录运行以下命令安装。
 
 ```sh
-npx skills add wWzZb/ui-state-board --skill ui-state-board -a codex -g
+npx skills add wWzZb/ui-state-board
+```
+
+如果希望在所有 Codex 项目中使用，可以选择全局安装。
+
+```sh
+npx skills add wWzZb/ui-state-board -a codex -g
 ```
 
 打开项目后调用 `$ui-state-board`。例如：
