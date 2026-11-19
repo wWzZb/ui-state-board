@@ -1,0 +1,139 @@
+{
+  "title": "映室 · UI 状态画布",
+  "groups": [
+    {
+      "name": "创作",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "states": [
+        {
+          "name": "访客首页",
+          "src": "../studio.html?review=guest"
+        },
+        {
+          "name": "已添加参考图",
+          "src": "../studio.html?review=reference-added"
+        },
+        {
+          "name": "参考图上传失败",
+          "src": "../studio.html?review=reference-error"
+        },
+        {
+          "name": "缺少提示词",
+          "src": "../studio.html?review=prompt-required"
+        }
+      ]
+    },
+    {
+      "name": "登录与支付",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "states": [
+        {
+          "name": "登录邮箱",
+          "src": "../studio.html?review=login"
+        },
+        {
+          "name": "输入验证码",
+          "src": "../studio.html?review=code"
+        },
+        {
+          "name": "余额不足与购买套餐",
+          "src": "../studio.html?review=buy"
+        },
+        {
+          "name": "微信支付待确认",
+          "src": "../studio.html?review=payment-waiting"
+        },
+        {
+          "name": "支付已取消",
+          "src": "../studio.html?review=payment-canceled"
+        },
+        {
+          "name": "支付失败",
+          "src": "../studio.html?review=payment-failed"
+        },
+        {
+          "name": "支付成功",
+          "src": "../studio.html?review=payment-succeeded"
+        }
+      ]
+    },
+    {
+      "name": "出图",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "states": [
+        {
+          "name": "正在生成",
+          "src": "../studio.html?review=running"
+        },
+        {
+          "name": "网络中断待确认",
+          "src": "../studio.html?review=unknown"
+        },
+        {
+          "name": "生成成功",
+          "src": "../studio.html?review=done"
+        },
+        {
+          "name": "生成失败返还张数",
+          "src": "../studio.html?review=failed"
+        },
+        {
+          "name": "审核未通过",
+          "src": "../studio.html?review=blocked"
+        },
+        {
+          "name": "确认重新生成",
+          "src": "../studio.html?review=again"
+        }
+      ]
+    },
+    {
+      "name": "作品",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "states": [
+        {
+          "name": "作品为空",
+          "src": "../studio.html?review=library-empty"
+        },
+        {
+          "name": "我的作品",
+          "src": "../studio.html?review=library"
+        },
+        {
+          "name": "作品详情",
+          "src": "../studio.html?review=detail"
+        }
+      ]
+    },
+    {
+      "name": "电脑适配",
+      "viewport": {
+        "width": 1280,
+        "height": 844
+      },
+      "states": [
+        {
+          "name": "桌面生成页",
+          "src": "../studio.html?review=guest"
+        },
+        {
+          "name": "桌面生成结果",
+          "src": "../studio.html?review=done"
+        }
+      ]
+    }
+  ],
+  "prototypeSrc": "../studio.html"
+}

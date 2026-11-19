@@ -1,0 +1,123 @@
+*{box-sizing:border-box}
+ :root{--ink:#20221f; --muted:#626764; --line:#dcdfd8; --paper:#f9faf7; --blue:#3148d5; --pale:#edf0ff; --font:"PingFang SC","Helvetica Neue",Arial,sans-serif}
+body{margin:0; background:var(--paper); color:var(--ink); font:14px/1.5 var(--font); -webkit-font-smoothing:antialiased}
+h1,h2,h3,p{margin:0}
+button{font:inherit; color:inherit; background:none; border:0}
+svg{width:20px; height:20px; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; fill:none; flex:none}
+.mast{height:70px; padding:0 22px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); background:var(--paper)}
+.brand,.row,.who,.meta,.cta,.ghost,.model,.tool,.navitem,.bar,.upload,.example,.status,.pair{display:flex; align-items:center}
+.brand{gap:9px; font-size:23px; font-weight:800; letter-spacing:-1px}
+.mark{display:inline-block; position:relative; width:29px; height:29px; overflow:hidden; background:var(--blue); border-radius:8px; transform:rotate(-4deg)}
+.mark i{position:absolute; border:1.8px solid white; width:13px; height:17px; border-radius:2px; top:5px; left:5px; transform:rotate(-19deg)}
+.mark i+i{left:11px; top:7px; transform:rotate(15deg); background:var(--blue)}
+.who{gap:7px; background:white; border:1px solid var(--line); border-radius:99px; padding:6px 11px; font-size:12px; font-weight:600}
+.who svg{width:15px; height:15px}
+.content{padding:25px 22px 26px}
+.head{margin-bottom:22px}
+h1{font-size:29px; font-weight:730; line-height:1.27; letter-spacing:-1px}
+h2{font-size:23px; letter-spacing:-.7px}
+h3{font-size:16px}
+.model{gap:7px; color:var(--muted); font-size:12px; margin-top:7px}
+.model i{width:7px; height:7px; border-radius:50%; background:var(--blue)}
+.block{margin-bottom:17px}
+.row,.bar,.pair{justify-content:space-between; gap:12px}
+.label{font-size:14px; font-weight:650}
+.sub,.micro{font-size:12px; color:var(--muted)}
+.padtop{margin-top:10px}
+.box{margin-top:8px; position:relative; border:1px solid #cdd1cb; background:white; border-radius:13px; padding:13px 14px; min-height:95px; font-size:14px; line-height:1.65}
+.ghostText{color:#777d79}
+.use{font-size:12px; color:var(--blue); font-weight:600}
+.upload{margin-top:8px; border:1px dashed #b9c1b8; border-radius:12px; min-height:57px; padding:10px 12px; gap:11px; background:#f4f6f1}
+.tileIcon,.thumb{width:35px; height:35px; border-radius:8px; display:grid; place-items:center; color:#465044; background:#e7ebe3; flex:none}
+.thumb{object-fit:cover}
+.upload strong{font-size:13px}
+.upload .micro{font-size:11px}
+.end{margin-left:auto; color:var(--muted)}
+.choice{display:flex; gap:6px; margin-top:8px}
+.chip{flex:1; border:1px solid var(--line); border-radius:8px; padding:6px 2px; text-align:center; font-size:12px; line-height:20px; background:#fff}
+.chip.sel{color:var(--blue); background:var(--pale); border-color:#aeb8f5; font-weight:650}
+.cta,.ghost{width:100%; border-radius:11px; min-height:46px; justify-content:center; gap:8px; font-weight:650}
+.cta{background:var(--blue); color:white}
+.ghost{border:1px solid var(--line); background:white}
+.ghost svg,.cta svg{width:17px; height:17px}
+.cta.dim{background:#dadeea; color:#656c80}
+.smallprint{text-align:center; font-size:11px; color:var(--muted); margin-top:7px}
+.example{overflow:hidden; border:1px solid var(--line); background:#fff; border-radius:12px; margin-top:18px; gap:15px}
+.example img{width:82px; height:74px; object-fit:cover}
+.example strong{font-size:15px; display:block}
+.example span{display:block; font-size:12px; color:var(--muted); margin-bottom:2px}
+.example svg{margin-left:auto; margin-right:12px; width:16px; color:var(--muted)}
+.navbar{border-top:1px solid var(--line); background:var(--paper); height:62px; display:flex; align-items:center; justify-content:space-around; margin-top:auto}
+.navitem{gap:7px; color:var(--muted); font-size:12px}
+.navitem.active{color:var(--blue); font-weight:650}
+.stage{min-height:844px; display:flex; flex-direction:column; position:relative}
+.alert{color:#923a26; background:#fcf0eb; border-radius:8px; margin-top:7px; padding:7px 10px; font-size:12px}
+.dimlayer{position:absolute; inset:0; background:#151b264c; display:flex; align-items:flex-end; z-index:3}
+.sheet{width:100%; border-radius:23px 23px 0 0; background:var(--paper); padding:10px 23px 26px; box-shadow:0 -8px 40px #19221615}
+.handle{width:35px; height:4px; background:#c7cbc4; border-radius:99px; margin:0 auto 18px}
+.x{width:30px; height:30px; border:1px solid var(--line); border-radius:50%; display:grid; place-items:center; color:var(--muted)}
+.x svg{width:14px}
+.desc{color:var(--muted); line-height:1.7; margin:8px 0 19px}
+.field{border:1px solid #c9cec7; background:#fff; border-radius:10px; padding:12px 14px; min-height:45px; margin:8px 0 16px; color:var(--muted)}
+.field.code{display:flex; justify-content:space-around; font-size:21px; letter-spacing:2px}
+.sheet .ghost{margin-top:9px}
+.package{border:1px solid #abb7fa; background:var(--pale); border-radius:14px; padding:17px; margin-bottom:15px}
+.package .row{align-items:baseline}
+.price{font-size:33px; letter-spacing:-1.4px; font-weight:720; color:var(--blue)}
+.package strong{font-size:20px}
+.package p{font-size:12px; margin-top:7px; color:#515b78}
+.status{flex-direction:column; text-align:center; padding:24px 18px 26px}
+.symbol{margin:0 auto 14px; background:var(--pale); color:var(--blue); width:55px; height:55px; border-radius:18px; display:grid; place-items:center}
+.symbol svg{width:27px; height:27px}
+.symbol.good{background:#e0f1df; color:#376c40}
+.symbol.warn{background:#f9eadf; color:#915b39}
+.statebody{background:#fff; border:1px solid var(--line); border-radius:16px; margin:20px 0 16px}
+.pending-art{height:177px; display:grid; place-items:center; background:radial-gradient(#bdc7e2 1px,transparent 1px) 0 0/12px 12px,#eff1f9; border-radius:15px 15px 0 0; color:var(--blue)}
+.pending-art .mark{transform:scale(2) rotate(-4deg); box-shadow:0 8px 20px #2735a820}
+.status p{color:var(--muted); margin-top:8px; font-size:13px}
+.status h2{font-size:21px}
+.promptcard{border:1px solid var(--line); border-radius:12px; background:white; padding:14px 16px; margin:14px 0; font-size:13px}
+.promptcard p{margin-top:5px}
+.bar{margin-bottom:17px}
+.back{display:flex; gap:6px; align-items:center; color:var(--muted); font-size:12px}
+.back svg{width:15px}
+.photo{width:100%; display:block; aspect-ratio:1; object-fit:cover; border-radius:15px}
+.meta{color:var(--muted); font-size:12px; gap:7px; margin:9px 0 19px}
+.dual{display:flex; gap:8px}
+.dual>*{flex:1}
+.cards{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.card{background:white; border-radius:12px; overflow:hidden; border:1px solid var(--line)}
+.card img{width:100%; display:block; aspect-ratio:1; object-fit:cover}
+.card div{padding:10px 11px}
+.card strong{font-size:14px; display:block}
+.card span{font-size:11px; color:var(--muted)}
+.empty{padding:45px 18px}
+.balance{display:flex; justify-content:space-between; align-items:center; background:#edf1e9; padding:12px 15px; border-radius:12px; margin:15px 0 22px}
+.balance .use{color:#33543c}
+.note{margin:14px 0; font-size:12px; color:var(--muted)}
+.desktop{max-width:1180px; width:100%; margin:0 auto; display:grid; grid-template-columns:.91fr 1.09fr; gap:40px; padding:48px 40px}
+.deskform{padding-top:10px}
+.desktop .preview{background:white; border:1px solid var(--line); padding:20px; border-radius:18px}
+.desktop .preview .photo{height:410px; aspect-ratio:auto}
+.desktop .preview .bar{margin-bottom:13px}
+.desktop .example{display:none}
+.desktop .navitem{font-size:14px}
+.deskhead .brand{margin-right:45px}
+.deskhead .row{gap:28px}
+.deskhead{padding:0 max(40px,calc((100vw - 1100px)/2)); height:78px}
+.toast{background:#e6f1e5; color:#335d36; margin-bottom:13px; padding:9px 12px; border-radius:9px; font-size:13px}
+.count{font-size:12px; color:var(--muted)}
+.listrow{padding:10px 0; border-bottom:1px solid var(--line)}
+.listrow:last-child{border:0}
+.fn{font:600 11px/1.5 ui-monospace,monospace; letter-spacing:.1px; color:#64705f}
+.sheet .status{padding-top:8px; padding-bottom:16px}
+
+.example{margin:0 0 20px; background:#faf4d9; border-color:#e6dec0; gap:16px}
+.example img{width:119px; height:107px}
+.example strong{font-size:20px; letter-spacing:-.5px}
+.example span{margin-top:4px; color:#67624e}
+.example .use{color:#343a26; font-size:11px; margin-top:9px}
+.foldnote{margin:10px 0 18px; font-size:12px; color:var(--muted)}
+.head:has(+.example){margin-bottom:15px}
+.sheet .symbol{margin-top:4px}
+.slim{margin-bottom:8px}

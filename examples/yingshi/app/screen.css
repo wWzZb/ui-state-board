@@ -1,0 +1,67 @@
+:root { color-scheme:light }
+button, a { cursor:pointer; -webkit-tap-highlight-color:transparent }
+button, input, textarea, select { font-family:inherit }
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline:3px solid #8595ff; outline-offset:2px }
+button:disabled { opacity:.55; cursor:default }
+button:hover:not(:disabled), .download:hover { filter:brightness(.97) }
+.cta:active:not(:disabled),.ghost:active { transform:translateY(1px) }
+.stage { min-height:100vh; min-height:100dvh; }
+.content { width:min(100%,620px); margin:0 auto; }
+textarea.box { width:100%; resize:vertical; display:block; font-size:16px; color:var(--ink); }
+.field { font-size:16px; display:block; width:100%; color:var(--ink) }
+input.field.code { text-align:center; letter-spacing:7px }
+.upload { width:100%; text-align:left; cursor:pointer; }
+.uploadwrap { display:flex; align-items:center; gap:6px }
+.uploadwrap .upload { flex:1; min-width:0 }
+.upload strong { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+.upload .filemeta { min-width:0 }
+button.example { width:100%; padding:0; text-align:left }
+.example .use { display:block }
+.chip { min-height:42px }
+.who,.back,.use,.navitem { min-height:36px }
+.navbar { position:sticky; bottom:0; z-index:2; padding-bottom:env(safe-area-inset-bottom); height:calc(62px + env(safe-area-inset-bottom)); flex-shrink:0 }
+.navitem { min-width:82px; justify-content:center }
+.navitem.active { font-weight:700 }
+.mast { flex-shrink:0 }
+.desktopnav,.preview { display:none }
+dialog { border:none; padding:0; margin:auto 0 0; max-width:none; width:100%; max-height:90dvh; overflow:auto; color:var(--ink); background:var(--paper); border-radius:23px 23px 0 0; }
+dialog::backdrop { background:#151b265c }
+.sheet { border-radius:inherit; padding-bottom:max(26px,env(safe-area-inset-bottom)); }
+.x { cursor:pointer; width:36px;height:36px; }
+.sheet button+button { margin-top:8px }
+.sheet .row button { margin:0 }
+.details { margin-top:16px; color:var(--muted); font-size:12px }
+.details summary { cursor:pointer; padding:7px 0; width:fit-content }
+.details select { font-size:14px; border-radius:8px; border:1px solid var(--line); padding:8px; background:white; color:var(--ink) }
+.details button { padding:6px; margin-right:8px; color:var(--blue); text-decoration:underline }
+#notice:not(:empty) { position:fixed; z-index:8; bottom:80px; left:50%; transform:translateX(-50%); max-width:90%; background:#202921; color:white; padding:10px 18px; border-radius:12px; text-align:center }
+.photo { aspect-ratio:auto;max-height:62vh;object-fit:contain;background:#edece4 }
+.card { padding:0;text-align:left;min-width:0 }
+.card strong { white-space:nowrap;text-overflow:ellipsis;overflow:hidden }
+.dual a { text-decoration:none }
+.promptcard p,.desc,.upload,.worktitle { overflow-wrap:anywhere }
+.busyMark { animation:breathe 1.6s infinite alternate }
+@keyframes breathe { to { opacity:.48; } }
+@media(prefers-reduced-motion:reduce) { .busyMark { animation:none } }
+@media(min-width:820px) {
+ .mast { height:78px;padding:0 max(40px,calc((100vw - 1100px)/2));justify-content:flex-start;gap:35px }
+ .mast .who { margin-left:auto }
+ .desktopnav { display:flex;gap:16px }.navbar { display:none }
+ .content { width:min(100%,1180px);padding:44px 40px 48px }
+ .workspace { display:grid;grid-template-columns:minmax(0,.91fr) minmax(0,1.09fr);gap:40px;align-items:start }
+ .workspace .example { display:none }
+ .preview { display:block;background:white;border:1px solid var(--line);border-radius:18px;padding:20px }
+ .preview .photo { max-height:432px }
+ .preview .bar {margin-bottom:12px}.preview .bar.padtop {margin:14px 0 0}
+ .reading { max-width:570px; margin:auto }
+ dialog { margin:auto; width:420px; border-radius:18px } .handle { visibility:hidden }
+ .cards { grid-template-columns:repeat(auto-fill,minmax(175px,1fr)) }
+}
+.sideEditor { display:none }
+#sheetError:not(:empty) { background:#fcf0eb;color:#923a26;padding:9px 12px;margin-top:10px;border-radius:8px }
+.brand { padding:0 }.example .use { min-height:auto }
+.promptcard p { white-space:pre-wrap }.details p { margin-top:8px }
+@media(min-width:820px) {
+ .resultLayout .sideEditor { display:block }
+ .resultPanel { padding:22px;background:white;border:1px solid var(--line);border-radius:18px }
+}
