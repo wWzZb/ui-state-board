@@ -4,7 +4,7 @@ const viewport = document.getElementById("viewport");
 const scene = document.getElementById("scene");
 const directory = document.getElementById("directory");
 const directoryToggle = document.getElementById("directory-toggle");
-const compactLayout = matchMedia("(max-width: 640px)");
+const compactLayout = matchMedia("(max-width: 820px)");
 const inspector = document.getElementById("inspector");
 const stateSelect = document.getElementById("state-select");
 const elementSelect = document.getElementById("element-select");
@@ -61,7 +61,9 @@ function setDirectoryOpen(open) {
 function activateFrame(frame) {
   if (activeFrame === frame) return;
   activeFrame?.directoryButton.removeAttribute("aria-current");
+  activeFrame?.figure.classList.remove("is-current");
   frame.directoryButton.setAttribute("aria-current", "true");
+  frame.figure.classList.add("is-current");
   activeFrame = frame;
 }
 
@@ -90,12 +92,21 @@ function zoomTo(scale, x = viewport.clientWidth / 2, y = viewport.clientHeight /
 }
 
 function setMode(mode) {
+  const wasInspecting = !inspector.hidden;
   viewport.dataset.mode = mode;
   for (const button of modeButtons) {
     button.setAttribute("aria-pressed", String(button.dataset.mode === mode));
   }
   for (const frame of frames) frame.iframe.tabIndex = mode === "interact" ? 0 : -1;
-  inspector.hidden = mode !== "inspect";
+  const inspecting = mode === "inspect";
+  if (wasInspecting !== inspecting) {
+    const width = viewport.clientWidth;
+    const height = viewport.clientHeight;
+    inspector.hidden = !inspecting;
+    camera.x += (viewport.clientWidth - width) / 2;
+    camera.y += (viewport.clientHeight - height) / 2;
+    applyCamera();
+  }
   if (mode === "inspect" && frames.length) refreshInspector(activeFrame || frames[0], activeElement);
   drawSelection();
 }
